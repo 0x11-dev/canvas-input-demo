@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Text Editor</title>
+    <style>
+        #textInput {
+            position: absolute;
+            opacity: 1;
+            color: transparent;
+            font-size: 8px;
+            outline: 0;
+            white-space: pre-wrap;
+            /* 支持换行 */
+            word-wrap: break-word;
+            /* 支持换行 */
+        }
+
+        #cursor {
+            position: absolute;
+            width: 2px;
+            height: 16px;
+            background-color: #000;
+            animation: blink 1s step-end infinite;
+        }
+
+        canvas {
+            border: 1px solid #000;
+        }
+
+        @keyframes blink {
+            50% {
+                background-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cursor"></div>
+    <canvas id="textCanvas" width="400" height="300"></canvas>
+    <div id="textInput" contenteditable="true"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
